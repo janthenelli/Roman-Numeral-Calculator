@@ -1,0 +1,9 @@
+Documentation for conversion methods
+
+romanToDecimal()
+	-takes in one parameter that is a String representation of a number that is in roman numeral format
+	-returns the base 10 equivalent of the parameter passed in
+
+decimalToRoman()
+	-takes in one parameter that is a String representation of a number in base 10 format
+	-returns the roman numeral equivalent of the parameter passed in

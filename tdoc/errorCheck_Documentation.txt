@@ -1,0 +1,55 @@
+Documentation for errorCheck v2
+
+checkError()
+	- Makes use of private class for Rules, creates a new one of each type of rule in global variables
+	- Is the only code that should be called to check for errors (all inclusive)
+	- takes in a String and produces a valid, formatted String, or produces the String = "Error"
+	- Checks for:
+		- Error if String is empty
+		- Characters that are not allowed
+		- Proper Spacing (removes spaces after check)
+		- Improper groupings (such as parenthesis)
+		- Dollar Sign is used as defined in spec (Only one occurence allowed)
+		- Make sure Starting and Ending Characters are valid at said location
+		- Make sure characters surrounding another character are valid in that order
+
+improperParenthesis()
+	- Returns false if no error is found, true if there is an error
+	- Only checks to make sure that every open is closed somewhere else and that there are no hanging opens
+
+isDollarUseCorrect()
+	- Returns true if usage is correct, false otherwise
+	- Checks to make sure the spec that only one $ is to be used in an expression
+
+isInputEmpty()
+	- Checks to make sure input is not empty
+
+spaceInsideNumeral()
+	- Returns a string formatted to all UpperCase and no spaces give that there is no spacing in illegal positions
+
+checkNumeralOrder()
+	- Returns true if ordering and range on a Roman numeral are correct (ie no IIIV)
+	- Range is from 1-3999
+
+RulesForChar private class
+	- character arrays determine what are valid of each type listed below
+		MUST EDIT THESE IF YOU CHANGE SPEC OF PROJECT
+
+	- Constructor takes in an integer and converts to proper rule using the following:
+		1: Operators
+		2: Numerals
+		3: Open Grouping
+		4: Closed Grouping
+		5: Variables
+		default: Unassigned
+	- is____()
+		- works just like Character.is____(). Takes in a character and sees if it fits into defined character array above
+
+	- isCharValid()
+		- takes in a character of before and after and makes sure that they are valid in that order
+		- Returns true if valid, otherwise false
+
+	- isCharIndexValid()
+		- takes an int and checks against allowedIndexBefore and allowedIndexEnd
+		- 0 = Beginning index
+		- greater than 0 = Ending index

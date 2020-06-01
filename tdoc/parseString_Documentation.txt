@@ -1,0 +1,5 @@
+Documentation for parseString()
+
+String parseString(String s)
+	- Takes a string of a roman numeral expression and parses it into a string of a decimal expression.
+	- Replaces all '$' variables with the value of the last output, if any

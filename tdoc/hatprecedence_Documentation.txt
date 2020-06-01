@@ -1,0 +1,10 @@
+Documentation for hatPrecedence
+
+hatPrecedence()
+	-provides the special behavior that is performed by exponent operators
+		-the exponent operator ^ is resolved right to left
+		-2^2^3 resolves to 2^8, as opposed to 4^3
+	-simplifies special case expressions
+		- redundant parenthesis such as (II)^(II) resolves into II^II
+	-after parenthesis are resolved, the final equation involving ^ is evaluated from right to left
+	-outputs remaining expression after solving exponents

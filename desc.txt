@@ -1,0 +1,26 @@
+Hail Caesar Project Description
+
+Hail Caesar is a Roman Numeral based calculator designed to look and function just like any base10 calculator I'm sure you're already 
+well aquainted with. However, there are several rules Roman Numerals follow as a number system that have to be taken into account to 
+make this a fully functioning and accurate representation of a product the Romans themsleves would've used to conduct their math back
+in the day. 
+
+Like any other calculator, ours takes user input for the expression to evaluate but then things get complicated. We have to check the given 
+expression as it's being entered into the calculator to ensure that the user is typing a valid Roman Numeral. Unlike our decimal number system,
+ordering in Roman Numerals is imperative and needed for the numbers to have their correct value. Our calculator makes sure the user is typing a 
+valid Roman Numeral expression with every button press before showing their input on the screen. Once the user is done entering their expression 
+can press enter to get their result displayed on the screen. However, a lot is going on in the background when the equals button is pressed.
+
+Before any math can be done to produce an output from the Roman Numeral expression, the expression must first be converted into decimal form. 
+Once the expression is in its decimal equivelent form it can then continue to be evaluated so that it an produe a decimal result. Since the user 
+entered the problem in Roman Numerals, the answer must also be displayed as a Roman Numeral. Before displaying the final result back to the calculator
+screen, the decimal answer is converted back to its equivelent in Roman Numeral form. 
+
+There are a few special funcitonalities that our calculator offers as well. We have a '$' variable that always stores the last result for easy reuse. 
+If there are no prior answers or the last answer was "Error", then the value of the '$' variable will be 0. Speaking of errors, the only time an error
+would be output to the calculator screen is if the result falls out of the range 1-3999. Another speculation we had to implement into our calculator 
+is a specialized exponent functionality. Exponent functions are evaluated right to left if there are multiple consecutive '^' operators within an expression.
+For example, 2^3^4 would evaluate 3^4 first, then return that result to evalaute 2^81 next instead of following normal exponent rules.
+
+Our team is very proud of our Roman Numeral calculator and believe it has the strong foundations needed to easily implement a different number system or 
+different specifications and functionalities anybody could need within a calculator application. 

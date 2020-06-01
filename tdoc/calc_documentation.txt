@@ -1,0 +1,39 @@
+Documentation for Calc
+
+calc() 
+	-Main functioning method in the program
+	-combines checkErrors(), hatPrecedence(), parseString(), and calcString() to take a given expression and print out the result
+		-takes in expression as a String
+		-checks for any errors in formating using checkErrors() before going into the method
+		-if there are any exponents (^) in the expression, it is passed through hatPrecedence() in order to evaluate the exponents inproper order and then                  return the remaining expression as a String
+		-the output string, or original string if no exponents, is then sent through parseString to trim whitespace and replace our 'last answer' variable ($)                  with its current value and outputs the cleaned up string after converting the roman numerals to their decimal value using romanToDecimal() 
+		-then finally the expression is passed into calcString() and evaluated using postfix notation 
+		-the output of calcString is then checked to make sure it falls in the desired range (1-3999) and then converted back into a roman numeral using                  decimalToRoman() and ouput as the final result
+
+calcString()
+	-the method that handles the math and outputing the final result for the program
+	-if the string passed in is "0" based on errors or results from prior methods, it returns a final result of "0"
+	-first converts string of decimals to postix using infixToPostfix()
+	-then evaluates the string in postfix notation using evaluatePostfix()
+	-converts result from int back to a string to output the proper type
+
+infixToPostfix()
+	-converts string of base10 decimal characters from infix notation to postfix notation
+	-utilizes a stack to keep track of operators based on priority
+	-uses char array of characters from original string to parse through and add to a new string in postfix order
+	-once all numbers and operators are accounted for the new postfix expression is output as a string
+
+getPriority() 
+	-PEMDAS
+	-checks given operator against operator already on the stack inside infixToPostfix() and organizes them accordingly
+	
+evaluatePostfix()
+	-takes in string of base10 numbers and operators in postfix notation
+	-utilizes a satck to hold numbers from the expression until a operator is found
+	-when an operator is found, the top two numbers are popped off the stack and used to perform that operation and then pushed back onto the stack
+	-once all oeprators and numbers from the original expression have been used, the top of the stack is returned as thhe result
+
+performOperation()
+	-used in evaluatePostfix() to return the result of the intermediary operations
+	-based on operator passed in, returns the two numbers also passed in that were popped off the stack in evaluatePostfix() and performs that operation on them
+	
